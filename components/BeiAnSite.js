@@ -13,7 +13,12 @@ export default function BeiAnSite() {
   return (
     <span>
       <i className='fas fa-shield-alt' />
-      <a href={beianLink} className='mx-1'>
+      <a
+        href={beianLink}
+        target='_blank'
+        rel='noopener noreferrer'
+        className='mx-1'
+      >
         {beian}
       </a>
       <br />
