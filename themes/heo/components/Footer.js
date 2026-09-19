@@ -53,7 +53,12 @@ const Footer = () => {
           {BEI_AN && (
             <>
               <i className='fas fa-shield-alt' />{' '}
-              <a href={BEI_AN_LINK} className='mr-2'>
+              <a
+                href={BEI_AN_LINK}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='mr-2'
+              >
                 {siteConfig('BEI_AN')}
               </a>
             </>
