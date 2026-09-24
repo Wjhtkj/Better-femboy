@@ -4,7 +4,7 @@
   "private": true,
   "description": "男娘潜质综合评估量表 - Cloudflare Pages 静态站点",
   "scripts": {
-    "test": "node tests/language-config.test.js && node tests/translation-template.test.js && node tests/en-us-translation-completeness.test.js",
+    "test": "node tests/language-config.test.js && node tests/translation-template.test.js && node tests/en-us-translation-completeness.test.js && node tests/question-bank.test.js",
     "dev": "wrangler pages dev . --d1=DB",
     "deploy": "wrangler pages deploy ."
   },

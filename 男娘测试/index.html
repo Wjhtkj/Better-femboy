@@ -1453,6 +1453,11 @@
         const STATE_STORAGE_KEY = 'nnTestState_v1';
         const RESULT_STORAGE_KEY = 'nnTestResult_v1';
         const QR_CACHE_PREFIX = 'nn_qr_data_url:';
+        // 二维码 dataURL 会占用可观的 localStorage 配额，用一张顺序表做简易 LRU，
+        // 避免长期访问不同站点路径时缓存无限增长把配额撑爆。
+        const QR_ORDER_KEY = 'nn_qr_cache_order';
+        const QR_CACHE_LIMIT = 6;
+        const SHARE_URL_MEMORY_KEY = 'nn_last_share_url';
         const CREATOR_NOTE_COLLAPSED_KEY = 'nn_creator_note_collapsed';
         const THEME_STORAGE_KEY = 'nn_theme';
         const FALLBACK_LANGUAGE_CONFIG = {
@@ -2240,9 +2245,32 @@
             return pendingScoreStatsRequest;
         }
 
+        function readStorage(key) {
+            try {
+                return localStorage.getItem(key);
+            } catch (error) {
+                return null;
+            }
+        }
+
+        function writeStorage(key, value) {
+            try {
+                localStorage.setItem(key, value);
+                return true;
+            } catch (error) {
+                return false;
+            }
+        }
+
         function getCleanTestUrl() {
             let testUrl = window.location.href.split('#')[0].split('?')[0];
-            return testUrl.startsWith('http') ? testUrl : 'https://github.com/xmbhjQAQ/my-static-sites';
+            if (testUrl.startsWith('http')) {
+                writeStorage(SHARE_URL_MEMORY_KEY, testUrl);
+                return testUrl;
+            }
+            // 非 http 环境（如本地直接用文件打开）时不再硬编码别人的仓库，
+            // 退回到上一次真实访问过的站点地址，实在没有就用当前地址。
+            return readStorage(SHARE_URL_MEMORY_KEY) || testUrl;
         }
 
         function blobToDataUrl(blob) {
@@ -2254,23 +2282,70 @@
             });
         }
 
+        const QR_API_BASE = 'https://api.qrserver.com/v1/create-qr-code/';
+
+        function readQrOrder() {
+            try {
+                const parsed = JSON.parse(readStorage(QR_ORDER_KEY) || '[]');
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (error) {
+                return [];
+            }
+        }
+
+        function clearQrCache() {
+            try {
+                readQrOrder().forEach(url => localStorage.removeItem(`${QR_CACHE_PREFIX}${url}`));
+                localStorage.removeItem(QR_ORDER_KEY);
+            } catch (error) {
+                // 存储不可用时无需处理
+            }
+        }
+
+        function rememberQrCache(testUrl, dataUrl) {
+            const cacheKey = `${QR_CACHE_PREFIX}${testUrl}`;
+            let order = readQrOrder().filter(url => url !== testUrl);
+            if (writeStorage(cacheKey, dataUrl)) {
+                order = [testUrl, ...order];
+                while (order.length > QR_CACHE_LIMIT) {
+                    const dropped = order.pop();
+                    try {
+                        localStorage.removeItem(`${QR_CACHE_PREFIX}${dropped}`);
+                    } catch (error) {
+                        break;
+                    }
+                }
+                writeStorage(QR_ORDER_KEY, JSON.stringify(order));
+                return true;
+            }
+            // 配额被写满时整批清掉二维码缓存再重试，避免把答题进度之类的关键存储挤掉。
+            clearQrCache();
+            const retried = writeStorage(cacheKey, dataUrl);
+            if (retried) writeStorage(QR_ORDER_KEY, JSON.stringify([testUrl]));
+            return retried;
+        }
+
         async function setQrCodeForCurrentUrl() {
             const img = document.getElementById('qr-code');
             if (!img) return;
+            // 无论取到的是缓存还是远端地址，加载失败都不要把裂图留在页面上。
+            img.onerror = () => { img.style.display = 'none'; };
+
             const testUrl = getCleanTestUrl();
-            const cacheKey = `${QR_CACHE_PREFIX}${testUrl}`;
-            const cached = localStorage.getItem(cacheKey);
+            const cached = readStorage(`${QR_CACHE_PREFIX}${testUrl}`);
             if (cached) {
                 img.src = cached;
                 return;
             }
 
-            const apiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(testUrl)}`;
+            const apiUrl = `${QR_API_BASE}?size=150x150&data=${encodeURIComponent(testUrl)}`;
             try {
                 const response = await fetch(apiUrl, { cache: 'force-cache' });
                 if (!response.ok) throw new Error(`QR request failed: ${response.status}`);
-                const dataUrl = await blobToDataUrl(await response.blob());
-                localStorage.setItem(cacheKey, dataUrl);
+                const blob = await response.blob();
+                if (!blob.type.startsWith('image/')) throw new Error('QR response was not an image');
+                const dataUrl = await blobToDataUrl(blob);
+                rememberQrCache(testUrl, dataUrl);
                 img.src = dataUrl;
             } catch (error) {
                 console.warn('QR cache generation failed, falling back to remote image:', error);
@@ -3000,8 +3075,12 @@
             }
             requestAnimationFrame(updateScoreVisual);
 
-            // 标准化判定段位
-            const tierConfig = getMessage('tiers', []).find(item => displayScore <= item.max) || { tier: "👑 究极天选男娘", desc: "传说级·纯度99.9%·已无药可救", color: "#ff1493" };
+            // 标准化判定段位。按 max 升序排序后再取，避免某个语言文件把 tiers 写乱序时
+            // 直接命中错误的分段（原本完全依赖数组书写顺序）。
+            const tierConfig = getMessage('tiers', [])
+                .filter(item => item && Number.isFinite(Number(item.max)))
+                .sort((a, b) => Number(a.max) - Number(b.max))
+                .find(item => displayScore <= Number(item.max)) || { tier: "👑 究极天选男娘", desc: "传说级·纯度99.9%·已无药可救", color: "#ff1493" };
             let tier = tierConfig.tier;
             let tierDesc = tierConfig.desc;
             let tierColor = tierConfig.color;

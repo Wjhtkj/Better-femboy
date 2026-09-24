@@ -302,7 +302,67 @@
         { id: 'K-L05', type: 'likert', d: 'K', facet: 'support_need', scored: false, r: false, face: 1, consistencyKey: 'support', consistencyPolarity: 1, t: "気分が落ち込んだ時、直接理屈を言われるより、優しく寄り添ってもらう方が回復できる。" },
         { id: 'K-L06', type: 'likert', d: 'K', facet: 'support_need', scored: false, r: false, face: 1, consistencyKey: 'support', consistencyPolarity: -1, t: "落ち込んでいる時は慰めが一番不要だ。どう解決するか直接教えてくれればいい。" },
         { id: 'K-L07', type: 'likert', d: 'K', facet: 'detail_sensitivity', scored: false, r: false, face: 1, consistencyKey: 'detail', consistencyPolarity: 1, t: "細部の不調和は、自分が思っている以上に注意を引きつける。" },
-        { id: 'K-L08', type: 'likert', d: 'K', facet: 'detail_sensitivity', scored: false, r: false, face: 1, consistencyKey: 'detail', consistencyPolarity: -1, t: "機能に問題がなければ、細部が調和しているかは全く気にしない。" }
+        { id: 'K-L08', type: 'likert', d: 'K', facet: 'detail_sensitivity', scored: false, r: false, face: 1, consistencyKey: 'detail', consistencyPolarity: -1, t: "機能に問題がなければ、細部が調和しているかは全く気にしない。" },
+
+        // =====================================================================
+        // 拡張層：各スコア次元を 36 問から 44 問へ（計 168 → 200 問）
+        // =====================================================================
+
+        // --- A：審美と感覚調整（8問追加） ---
+        { id: 'A-L27', type: 'likert', d: 'A', facet: 'visual_harmony', scored: true, r: false, face: 1, t: "机を拭いた後、上にある物をきれいに並べ直さないと落ち着かない。" },
+        { id: 'A-L28', type: 'likert', d: 'A', facet: 'texture_comfort', scored: true, r: false, face: 1, t: "衣替えで出した服がごわごわしていたり少しこもった匂いがすると、一度洗ってからでないと着る気になれない。" },
+        { id: 'A-L29', type: 'likert', d: 'A', facet: 'scent_cleanliness', scored: true, r: false, face: 1, t: "入浴後に空気の中へ残った清潔なボディソープの香りで、全身の力が抜ける。" },
+        { id: 'A-L30', type: 'likert', d: 'A', facet: 'detail_sensitivity', scored: true, r: false, face: 1, t: "肌に直接触れる衣類を買うとき、ほとんど誰も見ない縫い目や端の処理まで気になる。" },
+        { id: 'A-L31', type: 'likert', d: 'A', facet: 'visual_harmony', scored: true, r: true, face: 1, t: "【逆転】部屋を片付けるときは取り出しやすさしか考えず、見た目がまとまっているかはほとんど判断材料にならない。" },
+        { id: 'A-L32', type: 'likert', d: 'A', facet: 'texture_comfort', scored: true, r: false, face: 1, t: "見た目は立派でも触ると冷たい素材より、触れた瞬間に温かみを感じる素材の方を選びたい。" },
+        { id: 'A-C11', type: 'choice', d: 'A', facet: 'scent_cleanliness', scored: true, r: false, face: 2, t: "枕元に置き続ける香りだとしたら、どの系統を選ぶ？", options: [
+            { v: 2, l: "存在感がほとんどない淡い石鹸の香り" }, { v: 5, l: "ミルク・ピーチ・花のような少し甘い香り" },
+            { v: 1, l: "香りはいらない、窓を開ければ十分" }, { v: 4, l: "清潔感のある柑橘や白茶の香り" } ]},
+        { id: 'A-C12', type: 'choice', d: 'A', facet: 'detail_sensitivity', scored: true, r: false, face: 1, t: "友人が何気なく机の上の何かを褒めた。一番ありそうな理由は：", options: [
+            { v: 4, l: "周りの物と色の相性がちょうど良かった" }, { v: 1, l: "たぶんただの社交辞令" },
+            { v: 5, l: "置き方や角度にこだわって調整した部分がある" }, { v: 2, l: "たまたま周りの物より少し高価だった" } ]},
+
+        // --- B：身体空間と自己管理（8問追加） ---
+        { id: 'B-L27', type: 'likert', d: 'B', facet: 'space_usage', scored: true, r: false, face: 1, t: "電車が混んでくると、無意識にリュックを前に抱えて少しでも場所を取らないようにする。" },
+        { id: 'B-L28', type: 'likert', d: 'B', facet: 'motion_control', scored: true, r: false, face: 1, t: "引き出しやドアが耳障りな音を立てると、すぐに手の動きを緩める。" },
+        { id: 'B-L29', type: 'likert', d: 'B', facet: 'self_grooming', scored: true, r: false, face: 1, t: "爪の縁がささくれたり荒れていると、早く処理しないとずっと触ってしまう。" },
+        { id: 'B-L30', type: 'likert', d: 'B', facet: 'organization', scored: true, r: false, face: 1, t: "鞄の中はざっくりと区分けしているので、急いでいるときも手探りで目的の物を出せる。" },
+        { id: 'B-L31', type: 'likert', d: 'B', facet: 'space_usage', scored: true, r: true, face: 1, t: "【逆転】公共の場では楽な姿勢を優先し、どれだけ場所を取っているかはあまり気にしない。" },
+        { id: 'B-L32', type: 'likert', d: 'B', facet: 'motion_control', scored: true, r: false, face: 1, t: "他人の物は自分の物より丁寧に扱い、戻すときもそっと置く。" },
+        { id: 'B-C11', type: 'choice', d: 'B', facet: 'organization', scored: true, r: false, face: 1, t: "出かける一分前に充電ケーブルとイヤホンが絡まっているのに気づいた。あなたなら：", options: [
+            { v: 5, l: "急いでいてもきちんと巻き直してから鞄に入れる" }, { v: 1, l: "丸めてそのまま押し込む" },
+            { v: 4, l: "適当に二周巻いて、散らからなければいい" }, { v: 2, l: "脇に置いて、帰ってきてから対処する" } ]},
+        { id: 'B-C12', type: 'choice', d: 'B', facet: 'self_grooming', scored: true, r: false, face: 2, t: "会議に座った直後、袖口に目立つシワを見つけた。あなたに近いのは：", options: [
+            { v: 2, l: "気にしない、誰もそこまで見ていない" }, { v: 5, l: "どうにかして伸ばすか整えて、気持ちを落ち着かせたい" },
+            { v: 1, l: "そういう細かいことには全く気づかない" }, { v: 4, l: "目立つ部分をさっと手で伸ばす" } ]},
+
+        // --- C：情動共鳴と防衛機制（8問追加） ---
+        { id: 'C-L27', type: 'likert', d: 'C', facet: 'emotional_resonance', scored: true, r: false, face: 1, t: "ドキュメンタリーの再会シーンで、自分とは無関係でも思わず目頭が熱くなることがある。" },
+        { id: 'C-L28', type: 'likert', d: 'C', facet: 'support_need', scored: true, r: false, face: 1, t: "「あとは任せて、先に休んで」と言われると、軽く見られたとは思わずほっとする。" },
+        { id: 'C-L29', type: 'likert', d: 'C', facet: 'conflict_response', scored: true, r: false, face: 1, t: "意見が対立したとき、真っ向から言い返すよりまず言い方を柔らかくしようとする。" },
+        { id: 'C-L30', type: 'likert', d: 'C', facet: 'empathy', scored: true, r: false, face: 1, t: "グループチャットで明らかに落ち込んでいる人がいても誰も触れないとき、見て見ぬふりをせず個別に声をかけたくなる。" },
+        { id: 'C-L31', type: 'likert', d: 'C', facet: 'emotional_resonance', scored: true, r: true, face: 1, t: "【逆転】他人の事情がどれだけ波乱万丈でも、基本的には一つの情報として読み終えるだけで心は動かない。" },
+        { id: 'C-L32', type: 'likert', d: 'C', facet: 'support_need', scored: true, r: false, face: 1, t: "体調が悪いとき、誰かが言われる前に温かい飲み物を用意してくれる方が、自分で薬を探すよりずっと効く。" },
+        { id: 'C-C11', type: 'choice', d: 'C', facet: 'empathy', scored: true, r: false, face: 2, t: "自分の一言で友人が急に黙り込んだ。あなたなら：", options: [
+            { v: 5, l: "すぐに違和感に気づき、言い過ぎたかと自分から尋ねる" }, { v: 2, l: "相手が自分から話すのを待つ" },
+            { v: 1, l: "空気の変化に気づかない" }, { v: 4, l: "さっきの言葉を振り返り、柔らかい言い方で付け足す" } ]},
+        { id: 'C-C12', type: 'choice', d: 'C', facet: 'support_need', scored: true, r: false, face: 1, t: "一週間の残業続きでついに限界を感じた。今いちばん必要なのは：", options: [
+            { v: 4, l: "残っている仕事の一部を誰かが肩代わりしてくれること" }, { v: 1, l: "スマホを切って一人で眠ること、誰にも構われたくない" },
+            { v: 5, l: "「お疲れ様」と一言かけてもらい、自分が見てもらえたと感じること" }, { v: 2, l: "問題を書き出して次の一手を整理すること" } ]},
+
+        // --- D：表現スタイルとネット文化（8問追加） ---
+        { id: 'D-L27', type: 'likert', d: 'D', facet: 'online_expression', scored: true, r: false, face: 1, t: "グループで発言する前に、打った文を読み返して語気が強すぎると直してから送る。" },
+        { id: 'D-L28', type: 'likert', d: 'D', facet: 'role_flex', scored: true, r: false, face: 1, t: "現実とは全く違う仮想の姿で新しい友人を作ることは、負担ではなく面白いと感じる。" },
+        { id: 'D-L29', type: 'likert', d: 'D', facet: 'tone_softening', scored: true, r: false, face: 1, t: "頼みを断るとき、きっぱり断るよりまず語気を柔らかくする。" },
+        { id: 'D-L30', type: 'likert', d: 'D', facet: 'boundary_flex', scored: true, r: false, face: 1, t: "少し揶揄するような呼び方をされても、悪意がなければそのノリに乗って受け流す。" },
+        { id: 'D-L31', type: 'likert', d: 'D', facet: 'online_expression', scored: true, r: true, face: 1, t: "【逆転】ネット上の発言は用件が伝われば十分で、語気を和らげる表現や絵文字は不必要だと思う。" },
+        { id: 'D-L32', type: 'likert', d: 'D', facet: 'role_flex', scored: true, r: false, face: 1, t: "キャラメイクのあるゲームでは、見た目がしっくりくるまで何度でも調整する。" },
+        { id: 'D-C11', type: 'choice', d: 'D', facet: 'online_expression', scored: true, r: false, face: 1, t: "あまり親しくない同僚に仕事のメッセージを送るとき、書き方に近いのは：", options: [
+            { v: 2, l: "用件だけを書き、余計な一言も足さない" }, { v: 4, l: "呼びかけと「よろしくお願いします」を足して角を立てない" },
+            { v: 1, l: "思いついたまま送り、推敲しない" }, { v: 5, l: "絵文字や柔らかい語尾を足して誤解されないようにする" } ]},
+        { id: 'D-C12', type: 'choice', d: 'D', facet: 'boundary_flex', scored: true, r: false, face: 2, t: "グループチャットで全然違う性格の人だと誤解され、冗談を言われた。あなたは：", options: [
+            { v: 5, l: "そのままノッて話す、覚えてもらえたのは嬉しい" }, { v: 1, l: "すぐに真面目に本当の自分を説明する" },
+            { v: 4, l: "半分冗談で受け流し、説明も突っ込んだ議論もしない" }, { v: 2, l: "短く一言返して、それ以上は気にしない" } ]}
     ];
 
     rawQuestionBank.push(...supplementalQuestionBank);

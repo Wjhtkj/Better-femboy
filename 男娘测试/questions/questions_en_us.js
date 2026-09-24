@@ -300,7 +300,67 @@
         { id: 'K-L05', type: 'likert', d: 'K', facet: 'support_need', scored: false, r: false, face: 1, consistencyKey: 'support', consistencyPolarity: 1, t: "When emotionally frustrated, gentle companionship often helps me recover more than direct reasoning." },
         { id: 'K-L06', type: 'likert', d: 'K', facet: 'support_need', scored: false, r: false, face: 1, consistencyKey: 'support', consistencyPolarity: -1, t: "When I am in a bad mood, I do not need comfort from others; just tell me directly how to solve it." },
         { id: 'K-L07', type: 'likert', d: 'K', facet: 'detail_sensitivity', scored: false, r: false, face: 1, consistencyKey: 'detail', consistencyPolarity: 1, t: "Uncoordinated details attract my attention more easily than I expect." },
-        { id: 'K-L08', type: 'likert', d: 'K', facet: 'detail_sensitivity', scored: false, r: false, face: 1, consistencyKey: 'detail', consistencyPolarity: -1, t: "As long as the function is fine, I usually do not care at all whether the details are coordinated." }
+        { id: 'K-L08', type: 'likert', d: 'K', facet: 'detail_sensitivity', scored: false, r: false, face: 1, consistencyKey: 'detail', consistencyPolarity: -1, t: "As long as the function is fine, I usually do not care at all whether the details are coordinated." },
+
+        // =====================================================================
+        // Expansion layer: each scored dimension grows from 36 to 44 (168 → 200)
+        // =====================================================================
+
+        // --- A: Aesthetics and sensory regulation (8 added) ---
+        { id: 'A-L27', type: 'likert', d: 'A', facet: 'visual_harmony', scored: true, r: false, face: 1, t: "After wiping my desk, I instinctively straighten everything on it; it does not feel right until it looks tidy." },
+        { id: 'A-L28', type: 'likert', d: 'A', facet: 'texture_comfort', scored: true, r: false, face: 1, t: "If clothes pulled out at the change of season feel stiff or slightly stuffy, I wash them once before I am willing to wear them." },
+        { id: 'A-L29', type: 'likert', d: 'A', facet: 'scent_cleanliness', scored: true, r: false, face: 1, t: "A faint clean body wash scent lingering in the air after a shower lets my whole body relax." },
+        { id: 'A-L30', type: 'likert', d: 'A', facet: 'detail_sensitivity', scored: true, r: false, face: 1, t: "When buying clothes worn next to the skin, I notice seams and hems that almost nobody else ever sees." },
+        { id: 'A-L31', type: 'likert', d: 'A', facet: 'visual_harmony', scored: true, r: true, face: 1, t: "[Reverse] When tidying up, I only think about where things are within easy reach; whether the result looks harmonious barely enters my judgment." },
+        { id: 'A-L32', type: 'likert', d: 'A', facet: 'texture_comfort', scored: true, r: false, face: 1, t: "Rather than materials that look impressive but feel cold, I prefer ones that feel warm the moment you touch them." },
+        { id: 'A-C11', type: 'choice', d: 'A', facet: 'scent_cleanliness', scored: true, r: false, face: 2, t: "For a scent you keep by the bedside long term, which kind would you pick?", options: [
+            { v: 2, l: "A very faint, barely noticeable soap scent" }, { v: 5, l: "Something slightly sweet, like milk, peach or flowers" },
+            { v: 1, l: "No scent needed, opening the window is enough" }, { v: 4, l: "A clean citrus or white tea note" } ]},
+        { id: 'A-C12', type: 'choice', d: 'A', facet: 'detail_sensitivity', scored: true, r: false, face: 1, t: "A friend casually says something on your desk looks nice. The most likely reason is:", options: [
+            { v: 4, l: "Its color happens to match the things around it" }, { v: 1, l: "They were probably just being polite" },
+            { v: 5, l: "You spent time adjusting the angle and the small details" }, { v: 2, l: "It was simply a bit pricier than the rest" } ]},
+
+        // --- B: Body space and self management (8 added) ---
+        { id: 'B-L27', type: 'likert', d: 'B', facet: 'space_usage', scored: true, r: false, face: 1, t: "As the carriage gets more crowded, I instinctively hold my backpack in front of me to take up less room." },
+        { id: 'B-L28', type: 'likert', d: 'B', facet: 'motion_control', scored: true, r: false, face: 1, t: "If a drawer or door makes a harsh scraping noise, I slow my hand down right away." },
+        { id: 'B-L29', type: 'likert', d: 'B', facet: 'self_grooming', scored: true, r: false, face: 1, t: "If the edge of a nail is rough or has a hangnail, I deal with it quickly or I cannot stop touching it." },
+        { id: 'B-L30', type: 'likert', d: 'B', facet: 'organization', scored: true, r: false, face: 1, t: "I keep things in my bag roughly zoned, so even in a hurry I can find what I need by feel." },
+        { id: 'B-L31', type: 'likert', d: 'B', facet: 'space_usage', scored: true, r: true, face: 1, t: "[Reverse] In public I sit however is comfortable and hardly think about how much space my posture takes up." },
+        { id: 'B-L32', type: 'likert', d: 'B', facet: 'motion_control', scored: true, r: false, face: 1, t: "I handle other people's things more carefully than my own, and set them back down more gently too." },
+        { id: 'B-C11', type: 'choice', d: 'B', facet: 'organization', scored: true, r: false, face: 1, t: "One minute before leaving, you find your charging cable tangled with your earphones. You most likely:", options: [
+            { v: 5, l: "Wind them up properly even if I am in a rush" }, { v: 1, l: "Ball the whole thing up and shove it in" },
+            { v: 4, l: "Loop it roughly twice, as long as it is not a mess" }, { v: 2, l: "Set it aside and deal with it later" } ]},
+        { id: 'B-C12', type: 'choice', d: 'B', facet: 'self_grooming', scored: true, r: false, face: 2, t: "You just sat down for a meeting and notice an obvious wrinkle on your cuff. You:", options: [
+            { v: 2, l: "Leave it, nobody is looking that closely" }, { v: 5, l: "Find a way to smooth it out, otherwise it nags at me" },
+            { v: 1, l: "Would never notice that kind of thing at all" }, { v: 4, l: "Straighten the obvious part with my hand" } ]},
+
+        // --- C: Emotional resonance and defense (8 added) ---
+        { id: 'C-L27', type: 'likert', d: 'C', facet: 'emotional_resonance', scored: true, r: false, face: 1, t: "Watching a reunion scene in a documentary can make my eyes sting even though it has nothing to do with me." },
+        { id: 'C-L28', type: 'likert', d: 'C', facet: 'support_need', scored: true, r: false, face: 1, t: "Hearing someone say \"leave the rest to me, rest first\" makes me feel relieved rather than underestimated." },
+        { id: 'C-L29', type: 'likert', d: 'C', facet: 'conflict_response', scored: true, r: false, face: 1, t: "When I disagree with someone, I first try to soften how I put it instead of pushing straight back." },
+        { id: 'C-L30', type: 'likert', d: 'C', facet: 'empathy', scored: true, r: false, face: 1, t: "If someone in the group chat is clearly down but says nothing, I want to check in privately rather than pretend I did not notice." },
+        { id: 'C-L31', type: 'likert', d: 'C', facet: 'emotional_resonance', scored: true, r: true, face: 1, t: "[Reverse] However dramatic someone else's story is, I mostly read it as plain information and feel little inside." },
+        { id: 'C-L32', type: 'likert', d: 'C', facet: 'support_need', scored: true, r: false, face: 1, t: "When I feel unwell, someone bringing me hot water unasked helps more than hunting for medicine myself." },
+        { id: 'C-C11', type: 'choice', d: 'C', facet: 'empathy', scored: true, r: false, face: 2, t: "A friend goes quiet all of a sudden after something you said. You usually:", options: [
+            { v: 5, l: "Notice something is off right away and ask if I was too harsh" }, { v: 2, l: "Wait for them to bring it up first" },
+            { v: 1, l: "Do not register any change in the mood" }, { v: 4, l: "Replay what I said and add a softer follow-up" } ]},
+        { id: 'C-C12', type: 'choice', d: 'C', facet: 'support_need', scored: true, r: false, face: 1, t: "After a week of overtime you finally feel like you are at your limit. What you need most right now is:", options: [
+            { v: 4, l: "Someone taking part of the remaining work off my hands" }, { v: 1, l: "Turning my phone off and sleeping alone, no interruptions" },
+            { v: 5, l: "Someone saying \"you worked hard\", so I feel seen" }, { v: 2, l: "Laying out the problem and thinking through the next step" } ]},
+
+        // --- D: Expression and online subculture (8 added) ---
+        { id: 'D-L27', type: 'likert', d: 'D', facet: 'online_expression', scored: true, r: false, face: 1, t: "Before posting in a group chat, I read my message back and soften it if the tone feels too blunt." },
+        { id: 'D-L28', type: 'likert', d: 'D', facet: 'role_flex', scored: true, r: false, face: 1, t: "Meeting new friends through a virtual persona completely unlike my real one feels interesting to me, not burdensome." },
+        { id: 'D-L29', type: 'likert', d: 'D', facet: 'tone_softening', scored: true, r: false, face: 1, t: "When turning down a request, I soften my tone first rather than refusing flatly." },
+        { id: 'D-L30', type: 'likert', d: 'D', facet: 'boundary_flex', scored: true, r: false, face: 1, t: "If someone calls me by a slightly teasing nickname with no ill intent, I usually play along." },
+        { id: 'D-L31', type: 'likert', d: 'D', facet: 'online_expression', scored: true, r: true, face: 1, t: "[Reverse] Online I only care about getting my point across; softeners or emotes are pure excess in my view." },
+        { id: 'D-L32', type: 'likert', d: 'D', facet: 'role_flex', scored: true, r: false, face: 1, t: "In games with a character creator, I am willing to keep tweaking until the character looks right to me." },
+        { id: 'D-C11', type: 'choice', d: 'D', facet: 'online_expression', scored: true, r: false, face: 1, t: "Sending a work message to a colleague you do not know well, you are more likely to write:", options: [
+            { v: 2, l: "Straight to the point, not one extra word" }, { v: 4, l: "Add a greeting and \"thanks\" so it does not sound blunt" },
+            { v: 1, l: "Whatever comes to mind, no second thought" }, { v: 5, l: "End with an emote or softener so it cannot be misread" } ]},
+        { id: 'D-C12', type: 'choice', d: 'D', facet: 'boundary_flex', scored: true, r: false, face: 2, t: "People in a group chat mistake you for a different kind of person and tease you about it. You:", options: [
+            { v: 5, l: "Play along; being remembered feels kind of nice" }, { v: 1, l: "Immediately and seriously explain who I really am" },
+            { v: 4, l: "Take it half-jokingly, neither explaining nor arguing" }, { v: 2, l: "Reply briefly and leave it there" } ]}
     ];
 
     rawQuestionBank.push(...supplementalQuestionBank);
