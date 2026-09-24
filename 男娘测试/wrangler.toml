@@ -1,0 +1,13 @@
+# Cloudflare Pages 配置
+# 把 database_id 换成你自己的（见 wrangler d1 create 的输出）
+name = "femboy-test"
+compatibility_date = "2026-09-19"
+
+# 站点根目录就是本文件所在目录（index.html 与 functions/ 都在这一层）
+pages_build_output_dir = "."
+
+# D1 绑定：代码里通过 env.DB 访问
+[[d1_databases]]
+binding = "DB"
+database_name = "nn-score-db"
+database_id = "8a469cc6-0085-4779-b980-925ae88bbfd2"
