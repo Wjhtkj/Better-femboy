@@ -24,7 +24,10 @@
         window.LA.q = window.LA.q || [];
         window.LA.init = window.LA.init || function () { window.LA.q.push(['init', arguments]); };
         window.LA.track = window.LA.track || function () { window.LA.q.push(['track', arguments]); };
-        LA.init({ id: "3RJ9AZ2nvL6BsHo4", ck: "3RJ9AZ2nvL6BsHo4" });
+        // autoTrack: 开启事件分析（51.LA 热力图功能依赖此项，官方后台有黄字提示）
+        // hashMode:  不开启——本站不是 SPA（showPage() 切换 CSS，URL 恒定），开了会虚增 PV
+        // screenRecord: 不开启——录屏属高敏感采集，且站上已有 Clarity
+        LA.init({ id: "3RJ9AZ2nvL6BsHo4", ck: "3RJ9AZ2nvL6BsHo4", autoTrack: true });
     </script>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
