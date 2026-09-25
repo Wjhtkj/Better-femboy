@@ -15,6 +15,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <!-- 51.LA 网站统计（异步加载，避免阻塞首屏） -->
+    <script charset="UTF-8" async id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>
+        // 兜底桩：SDK 异步加载完成后会把 window.LA 覆盖为真实对象，
+        // 期间到达的 init/track 调用先入队，避免 "LA.init is not a function"。
+        window.LA = window.LA || {};
+        window.LA.q = window.LA.q || [];
+        window.LA.init = window.LA.init || function () { window.LA.q.push(['init', arguments]); };
+        window.LA.track = window.LA.track || function () { window.LA.q.push(['track', arguments]); };
+        LA.init({ id: "3RJ9AZ2nvL6BsHo4", ck: "3RJ9AZ2nvL6BsHo4" });
+    </script>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
