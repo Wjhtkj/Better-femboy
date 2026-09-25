@@ -4,6 +4,9 @@
 
 > ⚠️ **纯娱乐项目，不是心理学量表。** 结果没有任何医学或临床意义，别当真。
 
+- **本仓库**：https://github.com/Wjhtkj/Better-femboy
+- 上游原项目：https://github.com/xmbhjQAQ/my-static-sites
+
 ---
 
 ## 版权与署名
@@ -12,11 +15,25 @@
 |---|---|
 | 原作者 | **xmbhjQAQ** — https://github.com/xmbhjQAQ/my-static-sites |
 | 协议 | **CC BY-NC 4.0**（署名 - 非商业） |
-| 二次改编 | **Endless / Wjhtkj** |
+| 二次改编 | **Endless / Wjhtkj** — https://github.com/Wjhtkj/Better-femboy |
 
 本项目是原项目的改编版本：核心题库设计、计分与判定逻辑来自原作者；改编内容包括站点信息替换、主题持久化、题库扩容至 200 题、后端防护与工程化配置。
 
 **CC BY-NC 4.0 要求**：保留署名与原协议出处（页脚 LICENSE 链接、结果页「改编说明」段落不可删除），且**不得用于商业用途**。
+
+完整协议文本见仓库根目录 **[LICENSE](./LICENSE)**，其中末尾的「署名声明」段落记录了原作者与改编者信息。
+
+### 两个仓库的分工
+
+| 站内位置 | 指向 | 能否改动 |
+|---|---|---|
+| 页脚 `GitHub 仓库` | `Wjhtkj/Better-femboy` | ✅ 本仓库 |
+| 页脚 `CC BY-NC 4.0 LICENSE` | 原仓库的 LICENSE | ❌ **保留**（协议要求保留出处） |
+| 站长说明「GitHub 提 issue」 | `Wjhtkj/Better-femboy/issues` | ✅ 本仓库 |
+| 改编说明「原项目仓库」 | `xmbhjQAQ/my-static-sites` | ❌ **保留**（署名） |
+| 改编说明「本改编版仓库」 | `Wjhtkj/Better-femboy` | ✅ 本仓库 |
+
+> LICENSE 链接刻意保留指向原作者仓库：代码用的是原作者的 CC BY-NC 4.0，协议要求保留协议出处，改掉反而不合规。改编者的署名已体现在改编说明与页脚。
 
 ---
 
@@ -95,7 +112,7 @@ cd "D:\项目\femboy\my-static-sites-main\男娘测试"
 .\w.cmd pages deploy .
 ```
 
-更详细的从零到上线步骤（建库、迁移、Dashboard 绑定）见 **[SETUP.md](./SETUP.md)**。
+更详细的从零到上线步骤（建库、迁移、Dashboard 绑定）见 **[男娘测试/SETUP.md](./男娘测试/SETUP.md)**。
 
 ### 命令对照
 
@@ -326,7 +343,7 @@ nnDebug.reset()           // 清除调试状态
 | 上线后看不到改动 | Cloudflare 缓存 | `Ctrl + F5` 强刷，或用无痕窗口 |
 | 改了 HTML 里的中文没生效 | 该元素带 `data-i18n` | 改 `locales/zh-cn.json` |
 
-更多排错见 [SETUP.md](./SETUP.md)。
+更多排错见 [男娘测试/SETUP.md](./男娘测试/SETUP.md)。
 
 ---
 
@@ -343,7 +360,9 @@ nnDebug.reset()           // 清除调试状态
 
 改编者 **Endless / Wjhtkj**
 
+- GitHub https://github.com/Wjhtkj/ ｜ 本项目 https://github.com/Wjhtkj/Better-femboy
 - B站 https://space.bilibili.com/1130303811
-- GitHub https://github.com/Wjhtkj/
 - 博客 https://wjhtkjwz.eu.org/
 - QQ群 https://qm.qq.com/q/7Wi2AYKgXS
+
+原作者 **xmbhjQAQ** — https://github.com/xmbhjQAQ/my-static-sites
