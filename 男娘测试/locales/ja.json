@@ -118,8 +118,10 @@
       "waiting": "サンプル待機中"
     },
     "creatorNoteTitle": "制作者より",
+    "creatorNoteAdaptationHeading": "✏️ 改編について（本サイト）",
+    "creatorNoteOriginalHeading": "📜 元の制作者より（原作者 xmbhjQAQ の原文、未変更）",
     "contactAuthorHtml": "<del>作者のことが好き</del>このプロジェクトのことが好き？作者と友達になりたい方は → <a href=\"https://qm.qq.com/q/7Wi2AYKgXS\" target=\"_blank\" rel=\"noopener noreferrer\">QQ を追加</a>",
-    "creatorNoteAdaptationHtml": "【改編について】本サイトは、原作者 xmbhjQAQ のオープンソースプロジェクト『男娘（なんにゃん）適性総合評価スケール』をベースにした二次改編版です。問題プール・スコアリング・不正判定の中核ロジックは原作者によるもので、コードは CC BY-NC 4.0 ライセンスに従います。改編部分は主にページ文言、フッター情報、連絡先の差し替えです。元のリポジトリ：<a href=\"https://github.com/xmbhjQAQ/my-static-sites\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--primary); text-decoration: none;\">github.com/xmbhjQAQ/my-static-sites</a>；改編版リポジトリ：<a href=\"https://github.com/Wjhtkj/Better-femboy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--primary); text-decoration: none;\">github.com/Wjhtkj/Better-femboy</a>",
+    "creatorNoteAdaptationHtml": "本サイトは、原作者 xmbhjQAQ のオープンソースプロジェクト『男娘（なんにゃん）適性総合評価スケール』をベースにした二次改編版です。問題プール・スコアリング・不正判定の中核ロジックは原作者によるもので、コードは CC BY-NC 4.0 ライセンスに従います。改編部分は主にページ文言、フッター情報、連絡先の差し替えです。元のリポジトリ：<a href=\"https://github.com/xmbhjQAQ/my-static-sites\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--primary); text-decoration: none;\">github.com/xmbhjQAQ/my-static-sites</a>；改編版リポジトリ：<a href=\"https://github.com/Wjhtkj/Better-femboy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--primary); text-decoration: none;\">github.com/Wjhtkj/Better-femboy</a>",
     "creatorNoteP1": "このページはもともと4月初旬のある夜、暇つぶしにグループや友達を楽しませるために作ったものです。しかしなぜか1ヶ月後に予想外に広がってしまいました。このテストの結果は非常に非科学的で、一部の問題はステレオタイプに基づいており、参考価値はありません。純粋なネタです。",
     "creatorNoteP2": "問題の設計や重み付けについては、広範な社会調査やデータ分析が不足しており、かなりの割合がAI生成です。そうでなければ一晩でこれだけを友人に投げつけることはできませんでした（笑）。",
     "creatorNoteP3": "このサイトがいつ流行り始めたのかはよくわかりません。きっかけは友人がQQで「1ヶ月前に送ってくれたサイトが他の大きなグループで流れてるよ」と教えてくれたことです。バックエンドのDNS解決回数を確認して初めて、流行っていることに気づきました（統計機能もまだ入れていませんでした。全く予想していなかったからです）。",

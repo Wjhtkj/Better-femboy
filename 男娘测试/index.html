@@ -544,6 +544,31 @@
             margin-top: 8px;
         }
 
+        /* 站长说明内部按「改编说明 / 原站长说明」分区 */
+        .creator-note-section + .creator-note-section {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px dashed rgba(255, 143, 171, 0.35);
+        }
+
+        .creator-note-section-title {
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 7px;
+            letter-spacing: 0.2px;
+        }
+
+        /* 原站长说明：正文是原作者原话，用次级色弱化以区别于本站内容 */
+        .creator-note-section-original .creator-note-section-title {
+            color: var(--text-light);
+            opacity: 0.85;
+        }
+
+        .creator-note-section-original p {
+            color: var(--text-light);
+        }
+
         .creator-note-card p {
             margin: 0 0 9px;
         }
@@ -1259,6 +1284,7 @@
                 <p style="font-size: 12px; color: #999; margin-top: 8px;" data-i18n="home.disclaimer">本测试主打娱乐整活，结论请和奶茶甜度一样理性参考。</p>
             </div>
 
+            <!-- 首页站长说明由 initCreatorNoteClone() 从结果页克隆生成。此处不要手写卡片，容器内容会被清空重建。 -->
             <div id="creator-note-home-container"></div>
 
             <button class="btn-main" onclick="startTest()" data-i18n="home.start">抽取题库，开始鉴定</button>
@@ -1353,12 +1379,18 @@
                     <button type="button" class="creator-note-toggle" id="creator-note-toggle-result" onclick="toggleCreatorNote()" data-i18n="result.creatorNoteHide">隐藏说明</button>
                 </div>
                 <div class="creator-note-body" id="creator-note-body-result">
-                    <p data-i18n-html="result.creatorNoteAdaptationHtml">【改编说明】本站点是基于原作者 xmbhjQAQ 的开源项目《男娘潜质综合评估量表》进行的二次改编版本。原题库、计分与反作弊的核心逻辑均来自原作者，代码沿用 CC BY-NC 4.0 协议；改编部分主要是页面文案、页脚信息与联系方式的替换。原项目仓库：<a href="https://github.com/xmbhjQAQ/my-static-sites" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none;">github.com/xmbhjQAQ/my-static-sites</a>；本改编版仓库：<a href="https://github.com/Wjhtkj/Better-femboy" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none;">github.com/Wjhtkj/Better-femboy</a></p>
-                    <p data-i18n="result.creatorNoteP1">这个网页原本是我 4 月初某天晚上闲着无聊做出来给群友和身边朋友乐呵乐呵的，但是不知道怎么的，一个月后就传出去了。该评测出来的结果非常不科学，有些题目很刻板印象，不具备参考价值，纯乐子。</p>
-                    <p data-i18n="result.creatorNoteP2">关于题库中某些题的设计及权重，缺少广泛的社会调研及数据分析，且有相当比重是 AI 生成的；不然我也不可能一晚上就搓出来给群友喂坨大的 hhhh。</p>
-                    <p data-i18n="result.creatorNoteP3">这个网站是什么时候火起来的我也不太清楚。契机还是朋友 QQ 私信我，说一个月前我发给他玩的小网站在别的大群刷到了；我一打开后台看 DNS 解析次数，才发现它火起来了（那时候还没加统计，因为完全没有料到会有今天这般局面）。</p>
-                    <p data-i18n="result.creatorNoteP4">另外，有些朋友明明是认真做的却触发了非正常答题的“惩罚”页面，我已经在尽力优化题库和判定逻辑，也在考虑是否完全移除这一页面；但是有些朋友喜欢这个“彩蛋”，所以比较难权衡。希望大家多多包涵 QAQ，真的没有不尊重大家的意思，十分抱歉！如果感到受到冒犯的话我愿意站着挨打喵。得知这个网站火了的时候我真的特别高兴，也在尽力优化相关逻辑。感谢大家这些天的捧场！</p>
-                    <p data-i18n="result.creatorNoteP5">如果大家有相关改进意见，可以直接在 B 站私信或者 GitHub 提 issue，能满足大家的我一定尽量满足大家。</p>
+                    <div class="creator-note-section">
+                        <div class="creator-note-section-title" data-i18n="result.creatorNoteAdaptationHeading">✏️ 改编说明（本站点）</div>
+                        <p data-i18n-html="result.creatorNoteAdaptationHtml">本站点是基于原作者 xmbhjQAQ 的开源项目《男娘潜质综合评估量表》进行的二次改编版本。原题库、计分与反作弊的核心逻辑均来自原作者，代码沿用 CC BY-NC 4.0 协议；改编部分主要是页面文案、页脚信息与联系方式的替换。原项目仓库：<a href="https://github.com/xmbhjQAQ/my-static-sites" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none;">github.com/xmbhjQAQ/my-static-sites</a>；本改编版仓库：<a href="https://github.com/Wjhtkj/Better-femboy" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none;">github.com/Wjhtkj/Better-femboy</a></p>
+                    </div>
+                    <div class="creator-note-section creator-note-section-original">
+                        <div class="creator-note-section-title" data-i18n="result.creatorNoteOriginalHeading">📜 原站长说明（原文引自原作者 xmbhjQAQ，未作改动）</div>
+                        <p data-i18n="result.creatorNoteP1">这个网页原本是我 4 月初某天晚上闲着无聊做出来给群友和身边朋友乐呵乐呵的，但是不知道怎么的，一个月后就传出去了。该评测出来的结果非常不科学，有些题目很刻板印象，不具备参考价值，纯乐子。</p>
+                        <p data-i18n="result.creatorNoteP2">关于题库中某些题的设计及权重，缺少广泛的社会调研及数据分析，且有相当比重是 AI 生成的；不然我也不可能一晚上就搓出来给群友喂坨大的 hhhh。</p>
+                        <p data-i18n="result.creatorNoteP3">这个网站是什么时候火起来的我也不太清楚。契机还是朋友 QQ 私信我，说一个月前我发给他玩的小网站在别的大群刷到了；我一打开后台看 DNS 解析次数，才发现它火起来了（那时候还没加统计，因为完全没有料到会有今天这般局面）。</p>
+                        <p data-i18n="result.creatorNoteP4">另外，有些朋友明明是认真做的却触发了非正常答题的“惩罚”页面，我已经在尽力优化题库和判定逻辑，也在考虑是否完全移除这一页面；但是有些朋友喜欢这个“彩蛋”，所以比较难权衡。希望大家多多包涵 QAQ，真的没有不尊重大家的意思，十分抱歉！如果感到受到冒犯的话我愿意站着挨打喵。得知这个网站火了的时候我真的特别高兴，也在尽力优化相关逻辑。感谢大家这些天的捧场！</p>
+                        <p data-i18n="result.creatorNoteP5">如果大家有相关改进意见，可以直接在 B 站私信或者 GitHub 提 issue，能满足大家的我一定尽量满足大家。</p>
+                    </div>
                     <div class="creator-note-links">
                         <a href="https://space.bilibili.com/1130303811" target="_blank" rel="noopener noreferrer" data-i18n="result.creatorNoteBilibili">B 站私信</a>
                         <a href="https://github.com/Wjhtkj/Better-femboy/issues" target="_blank" rel="noopener noreferrer" data-i18n="result.creatorNoteGithub">GitHub 提 issue</a>
@@ -1848,6 +1880,9 @@
             const template = document.getElementById('creator-note-card-result');
             const container = document.getElementById('creator-note-home-container');
             if (template && container) {
+                // 先清空容器：可视化编辑器等工具可能把运行时克隆结果序列化回源码，
+                // 导致容器内残留一份静态副本，进而在首页同时出现两份站长说明。
+                container.innerHTML = '';
                 const clone = template.cloneNode(true);
                 clone.id = 'creator-note-card-home';
                 const toggleBtn = clone.querySelector('.creator-note-toggle');
