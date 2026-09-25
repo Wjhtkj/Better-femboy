@@ -1,4 +1,59 @@
-<<<<<<< HEAD
+Attribution-NonCommercial 4.0 International
+
+=======================================================================
+
+Creative Commons Corporation ("Creative Commons") is not a law firm and
+does not provide legal services or legal advice. Distribution of
+Creative Commons public licenses does not create a lawyer-client or
+other relationship. Creative Commons makes its licenses and related
+information available on an "as-is" basis. Creative Commons gives no
+warranties regarding its licenses, any material licensed under their
+terms and conditions, or any related information. Creative Commons
+disclaims all liability for damages resulting from their use to the
+fullest extent possible.
+
+Using Creative Commons Public Licenses
+
+Creative Commons public licenses provide a standard set of terms and
+conditions that creators and other rights holders may use to share
+original works of authorship and other material subject to copyright
+and certain other rights specified in the public license below. The
+following considerations are for informational purposes only, are not
+exhaustive, and do not form part of our licenses.
+
+     Considerations for licensors: Our public licenses are
+     intended for use by those authorized to give the public
+     permission to use material in ways otherwise restricted by
+     copyright and certain other rights. Our licenses are
+     irrevocable. Licensors should read and understand the terms
+     and conditions of the license they choose before applying it.
+     Licensors should also secure all rights necessary before
+     applying our licenses so that the public can reuse the
+     material as expected. Licensors should clearly mark any
+     material not subject to the license. This includes other CC-
+     licensed material, or material used under an exception or
+     limitation to copyright. More considerations for licensors:
+    wiki.creativecommons.org/Considerations_for_licensors
+
+     Considerations for the public: By using one of our public
+     licenses, a licensor grants the public permission to use the
+     licensed material under specified terms and conditions. If
+     the licensor's permission is not necessary for any reason--for
+     example, because of any applicable exception or limitation to
+     copyright--then that use is not regulated by the license. Our
+     licenses grant only permissions under copyright and certain
+     other rights that a licensor has authority to grant. Use of
+     the licensed material may still be restricted for other
+     reasons, including because others have copyright or other
+     rights in the material. A licensor may make special requests,
+     such as asking that all changes be marked or described.
+     Although not required by our licenses, you are encouraged to
+     respect those requests where reasonable. More considerations
+     for the public:
+    wiki.creativecommons.org/Considerations_for_licensees
+
+=======================================================================
+
 Creative Commons Attribution-NonCommercial 4.0 International Public
 License
 
@@ -36,6 +91,7 @@ Section 1 -- Definitions.
      categorized. For purposes of this Public License, the rights
      specified in Section 2(b)(1)-(2) are not Copyright and Similar
      Rights.
+
   d. Effective Technological Measures means those measures that, in the
      absence of proper authority, may not be circumvented under laws
      fulfilling obligations under Article 11 of the WIPO Copyright
@@ -250,7 +306,7 @@ Section 5 -- Disclaimer of Warranties and Limitation of Liability.
      PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS,
      ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT
      KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT
-     ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.
+     ALLOWED IN FULL OR PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.
 
   b. TO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE
      TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION,
@@ -332,44 +388,48 @@ Section 8 -- Interpretation.
 
 =======================================================================
 
-Creative Commons is not a party to its public
-licenses. Notwithstanding, Creative Commons may elect to apply one of
-its public licenses to material it publishes and in those instances
-will be considered the “Licensor.” The text of the Creative Commons
-public licenses is dedicated to the public domain under the CC0 Public
-Domain Dedication. Except for the limited purpose of indicating that
-material is shared under a Creative Commons public license or as
-otherwise permitted by the Creative Commons policies published at
+Creative Commons is not a party to its public licenses. Notwithstanding,
+Creative Commons may elect to apply one of its public licenses to
+material it publishes and in those instances will be considered the
+"Licensor." Except for the limited purpose of indicating that material
+is shared under a Creative Commons public license or as otherwise
+permitted by the Creative Commons policies published at
 creativecommons.org/policies, Creative Commons does not authorize the
 use of the trademark "Creative Commons" or any other trademark or logo
 of Creative Commons without its prior written consent including,
 without limitation, in connection with any unauthorized modifications
 to any of its public licenses or any other arrangements,
 understandings, or agreements concerning use of licensed material. For
-the avoidance of doubt, this paragraph does not form part of the
-public licenses.
+the avoidance of doubt, this paragraph does not form part of the public
+licenses.
 
 Creative Commons may be contacted at creativecommons.org.
-=======
-MIT License
 
-Copyright (c) 2021-present, tangly1024
+=======================================================================
+ATTRIBUTION / 署名声明
+=======================================================================
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+本仓库《Better-femboy》是下述原作品的改编版本（Adapted Material）。
+依据上述 CC BY-NC 4.0 第 3 条的要求，作如下署名：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+原作品：《男娘潜质综合评估量表》
+        (Femboy Potential Comprehensive Assessment Scale)
+原作者：xmbhjQAQ
+原作品仓库：https://github.com/xmbhjQAQ/my-static-sites
+原作品协议：CC BY-NC 4.0
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
->>>>>>> 9cf7df67ad637acba466a66a2167a23b5032b1b3
+改编者：Endless / Wjhtkj
+改编版仓库：https://github.com/Wjhtkj/Better-femboy
+改编内容：页面文案与页脚信息替换、深色/浅色主题持久化、题库由 168 题
+          扩充至 200 题（含英、日文同步翻译）、后端提交校验与工程化配置。
+          核心题库设计、计分与反作弊逻辑均来自原作者，未作改动。
+
+依据第 3(a)(1)(A) 条，本改编版保留：原作者身份标识、协议声明、免责声明
+引用，以及原作品与本协议的链接。依据第 3(a)(1)(B) 条，本文件即「作品
+已被修改」的声明。
+
+本改编版同样以 CC BY-NC 4.0 发布：允许在非商业用途下自由复制、修改与
+再分发，但必须保留上述署名并以相同协议共享；商业用途需另行取得原作者
+许可。
+
+完整项目说明见 README.md。
